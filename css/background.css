@@ -1,0 +1,8 @@
+#wen_bg{
+    /* 背景图像的地址（url括号里）  */
+    background: url(https://bozhiblogimage.oss-cn-beijing.aliyuncs.com/pic/BlogBackgroundmountain.png);
+    /* 背景图像不重复 */
+    background-repeat: no-repeat;
+    /* 背景图像大小 */
+    background-size: cover;
+}
