@@ -1,7 +1,211 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>博智同学的小屋</title><meta name="author" content="博智"><meta name="copyright" content="博智"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="博智同学的小屋">
+<meta property="og:url" content="https://bozhistu.cn/page/2/index.html">
+<meta property="og:site_name" content="博智同学的小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="博智">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://bozhistu.cn/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '博智同学的小屋',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-01-30 17:41:29'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="博智同学的小屋" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="博智同学的小屋"><span class="site-name">博智同学的小屋</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">博智同学的小屋</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/19/Tensorflow2-0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Tensorflow2.0学习笔记">Tensorflow2.0学习笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-19T05:22:37.000Z" title="发表于 2023-11-19 13:22:37">2023-11-19</time></span></div><div class="content">前言参考教材：https://www.bilibili.com/video/BV1B7411L7Qt?p=1&amp;vd_source=eb8db86881f9d0e921f94dd2a4155bc9Tensorflow版本：Tensorflow2.4CUDA:暂未安装
+
+遇到的问题与解决用pycharm新建工程时候解释器添加失败。我的界面是下面这样视频中是下面这样的，但我在我的anaconda3的TF2.1路径下根本找不到python.exe在旁边工位的曾阳的帮助下，设置成这样即可。可以在condabin文件下找到一个bat文件，然后更改Use existing environment为TF2.1即可
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/10/RM%E8%A7%86%E8%A7%89-%E8%B0%83%E8%BD%A6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3/" title="RM视觉 调车遇到的问题及解决">RM视觉 调车遇到的问题及解决</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-10T01:18:33.000Z" title="发表于 2023-11-10 09:18:33">2023-11-10</time></span></div><div class="content">路由器下，ssh连接nuc后，launch程序后不显示相机图像解决：1、检查VSCODE有没有加那三行
+123ForwardX11 yesForwardX11Trusted yesForwardAgent yes
+2、不在VsCode的终端下launch，在系统终端运行试试3、检查相机有没有在读取图像。对于一般大恒相机，相机读取图像时，绿点在闪烁。若相机出现问题，则相机节点应该跑不起来。试试单独run相机节点，若不行，则拔插相机线。4、整车断电重启
+终端只输出can口——normal（如图），无图像等数据。
+解决：杀死程序，一个一个地run节点，看有没有死掉的节点。实在不行整车重启
+在路由器下第一次连接nuc时，报错超时（当时没拍照但报错应该与这张图类似）（可能的）原因：路由器只提供局域网环境，没有网络，而第一次连接可能需要下载一些东西，可能是因为此时没网所以下不下来所以超时。解决：用热点连接一次，之后就可以用路由器了。
+不得不说，直接用显屏连接真香。其他的连接指不定会出什么幺蛾子哈哈哈
+调节曝光时，怎么调都没反应注意，有两个daheng_camera.xml文件，要调rmos_bri ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/08/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%865/" title="离散数学知识点整理5">离散数学知识点整理5</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-07T23:59:40.000Z" title="发表于 2023-11-08 07:59:40">2023-11-08</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/11/01/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%864/" title="离散数学知识点整理4">离散数学知识点整理4</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-11-01T05:14:46.000Z" title="发表于 2023-11-01 13:14:46">2023-11-01</time></span></div><div class="content">离散数学概念整理4推理规则和证明方法推理规则EG1
+
+从这个永真蕴含式可看出，它正是代表“如果𝑃并且𝑃 → 𝑄是真，则𝑄是真”的意义，这里𝑃和𝑄表示任意命题。所以，它恰好代表上侧的推理规则
+这条推理规则叫假言推理，从形式上看结论𝑄是从𝑃 → 𝑄中分离出来的，所以又叫分离规则。它是推理规则中最重要的一条。
+EG2对任一永真蕴含式𝐴⇒𝐵来说，如果前提𝐴为真，则可保证𝐵为真，因此不难看出，任一个永真蕴含式都可作为一条推理规则。例如，¬𝑃∧(𝑃∨𝑄)⇒𝑄代表以下规则，叫做析取三段论。
+定义若𝐻1 ∧ 𝐻2 ∧ ⋯ ∧ 𝐻𝑛 ⇒ 𝐶，则称𝐶是𝐻1, 𝐻2, ⋯ , 𝐻𝑛的有效结论。
+
+特别地，若𝐴⇒𝐵 ，则称𝐵是𝐴的有效结论
+
+
+定义说明: 若𝐻1 ∧ 𝐻2 ∧ ⋯ ∧ 𝐻𝑛 ⇒ 𝐶，则从𝐻1 ∧ 𝐻2 ∧ ⋯ ∧ 𝐻𝑛推出𝐶，这样的推理是正确的。但注意推理正确不等于结论为真，结论的真假还&#x3D;&#x3D;取决于前提&#x3D;&#x3D;𝐻1 ∧ 𝐻2 ∧ ⋯ ∧ 𝐻𝑛的真假，前提为真时，结论𝐶为 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/26/%E6%8B%AF%E6%95%91%E8%80%85%E5%BC%80%E5%90%AF%E7%8B%AC%E6%98%BE%E7%9B%B4%E8%BF%9E%EF%BC%8CLegion-Zone%E6%B2%A1%E6%9C%89%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E9%80%89%E9%A1%B9%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/" title="拯救者开启独显直连，Legion Zone没有显示模式选项怎么办？">拯救者开启独显直连，Legion Zone没有显示模式选项怎么办？</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-26T07:27:23.000Z" title="发表于 2023-10-26 15:27:23">2023-10-26</time></span></div><div class="content">前言最近想买一个可以接4K 60hz的拓展坞，但拯救者y7000p 2022的全功能C口不能调用独显直连，所以想把独显直连关掉，测试一下混合模式能不能带动我的工作。但却找了好久找不到如何关闭。。。
+教程先看我的界面是这样的点击右上角的即可找到显示模式再点击即可打开设置切换到独显模式即可，但Legion Zone不可以热切换，需要重启生效哦~听说NVIDIA控制面板可以热切换，但在跟着教程操作时我的界面和教程不一样，找不到切换的界面，所以还是用了这个“本办法”。好在解决了！
+真是的，联想为啥要把这个东西隐藏到这里呢，真难找！嗯，感觉混合模式完全可以带的动我的工作，打算买拓展坞咯~
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/23/RM%E7%AE%97%E6%B3%95%E7%BB%84%E6%89%93%E7%AC%A6%E5%9F%B9%E5%85%BB%E8%B7%AF%E7%BA%BF/" title="RM算法组打符培养路线">RM算法组打符培养路线</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-23T07:41:37.000Z" title="发表于 2023-10-23 15:41:37">2023-10-23</time></span></div><div class="content">前言本人是西电IRobot战队24赛季正式队员，负责本赛季打符的传承和优化。在此记录下自己的培养，包括学习路线、推荐的学习资料等等，便于以后培养与传承下一代队员。
+培养方案必备基础双系统ubantu的安装（文档，但文档有少许错误）cmake简单学习（文档+网站自行搜索）（之后的一些书如下面介绍到的slam十四讲 也有介绍而且有例子）opencv简单学习（电子书）任务点：装甲板识别
+
+装甲板识别任务.pdf思路如下 装甲板识别流程.pdf测试所用数据包 test_data.zip
+
+学习《视觉slam十四讲》电子版学习第3章，第5章，7.7节，7.8节，对于线性代数部分，建议在学习线代后再看一下b站的3blue1brown的《线性代数的本质》（汉语配音版）
+考核任务：在自己之前的装甲板识别代码基础上添加pnp解算，输出装甲板在相机系下的平移矩阵。
+了解相机标定原理，学习相机标定操作过程。（但后来用的不多）
+卡尔曼滤波强烈建议Dr_Can的系列教程链接：【卡尔曼滤波器】1_递归算法_Recursive Processing需要自己会推！ （但是我没..）
+ros学习学习期限：2周实际学习： ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/22/%E5%A5%BD%E7%9C%8B%E7%9A%84VSCode%E4%B8%BB%E9%A2%98/" title="好看的VSCode主题">好看的VSCode主题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-22T12:10:38.000Z" title="发表于 2023-10-22 20:10:38">2023-10-22</time></span></div><div class="content">推荐一下自己的VSCode主题，以后自己换机了也可以参考这个设置主题。
+预览
+配置步骤插件Material Theme安装后点击设置颜色主题设置Material Theme Darker High Contrast主题（我感觉这个不错）
+Material Theme Icons设置文件图标主题，选择第一个
+修改注释颜色由于我们改变了主题，注释变得不太明显这对于一些多注释的程序可能不太友好，但我们可以手动更改注释颜色具体步骤为：打开字体的setting.json文件，将以下代码添加到最后一个”}”的前面
+123&quot;editor.tokenColorCustomizations&quot;: &#123;    &quot;comments&quot;: &quot;#3dca3d&quot;&#125;
+如图其中的#3dca3d表示颜色，可以自己更改，我觉得改成这个绿色比较明显美观度也挺好看。
+结束！</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/22/%E9%98%BF%E9%87%8C%E4%BA%91OSS-PicGo%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="阿里云OSS + PicGo上传图片失败问题解决">阿里云OSS + PicGo上传图片失败问题解决</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-22T11:44:14.000Z" title="发表于 2023-10-22 19:44:14">2023-10-22</time></span></div><div class="content">先宣布一个好消息！图床终于搭好了。在尝试了gitee,github后，终于还是决定自己搭建图床。因为gitee不知为何用不了，github太慢了。我参考的这个教程
+遇到的问题上传失败!这应该是所有图床搭建时最普遍的问题了吧。
+搭建教程总体参考这篇博客我花 9 块钱搭了一个配合个人博客使用的个人图床
+总体还是非常顺利的，购买、配置，到最后终于要使用PicGo上传了，结果：上传失败
+因为右下角picgo弹出的小窗没有显示错误信息，所以我不知道是哪里出了问题，只能搜索上传失败怎么办，但网上大多教程都是由于配置出现问题，如多敲了空格等等。（现在想想编译器能够告诉我们哪里出现了语法错误可真是好！）多次检查我的配置没写错后，发现原来PicGo是有日志的。于是我打开了日志打开步骤如图
+日志文件显示这么一段：看不太懂，或者没耐心看，于是直接复制给了chatGPT，问他为什么上传不了。
+原来是windows时间不标准导致了这个问题！！！
+感想话说回来，自从装了双系统ubantu，上完ubantu再上windows时间经常会出错，但也没太在意。谁能想到，居然设备的时间也会导致上传失败呢。一切都很顺利，但老 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/16/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" title="搭建博客踩坑经验总结">搭建博客踩坑经验总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-16T03:20:41.000Z" title="发表于 2023-10-16 11:20:41">2023-10-16</time></span></div><div class="content">前言想搭建自己的博客很久了，现在终于搭建完成。期间按照主教程搭建，教程写的还是非常细致的。严格一步步走基本没问题，但为什么是“基本”呢？因为还是有点问题的。而我是一个web小白，所以解决这些问题耗费了我大量的时间。
+问题Error：spawn failed错误的尝试与探索这个问题困扰我最久了。网站未添加域名前还是可以部署的（也就部署了一次），这个问题出现在添加了域名后，因此我以为是服务器和域名的问题。但把它们全关闭和停止解析后仍然出错。而且如果新建的库（空的库）是可以上传的。。。
+原因和解决因为主教程中的repo：后面是http的链接，于是我看了一些帖子改成了ssh，但由于某个帖子的ssh的链接写的有点错误，把一个斜杠达成了冒号。所以我把我的设置改成“错误的”ssh后一直没解决。最后终于发现了一些解决问题的教程写的是斜杠，改了后就可以部署了。
+域名停止解析后打开BoZhiStudying233.github.io仍然会重定向到域名后来推测应该是浏览器的缓存问题，用google试了一下发现可以打开BoZhiStudying233.github.io且不会重定向了
+感想以上就是了。博客刚搭 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/10/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%863/" title="离散数学概念整理3">离散数学概念整理3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-10T11:52:33.000Z" title="发表于 2023-10-10 19:52:33">2023-10-10</time></span></div><div class="content">离散数学概念整理3范式动机命题公式千变万化，这对研究其性质和应用带来困难因此要建立一个标准，这个标准就称为范式
+析取范式和合取范式合取式称为积，析取式称为和
+命题公式中的一些命题变元和一些命题变元的否定之积，称为基本积；一些命题变元和一些命题变元的否定之和，称为基本和。（相互对偶的）
+Eg给定命题变元𝑃和𝑄，则𝑃、¬𝑃∧𝑄 、 𝑃∧𝑄、¬𝑃∧𝑃、¬𝑄∧𝑃∧𝑄等都是基本积；𝑄、¬𝑄∨𝑃、𝑃∨𝑄、𝑃∨¬𝑃、 𝑃∨𝑄∨¬𝑄等都是基本和。
+基本积(和)中的子公式称为此基本积(和)的因子。&#x3D;&#x3D;注意&#x3D;&#x3D;：命题变元或命题变元的否定既是基本积也是基本和。
+定理1.3-1一个基本积是永假式 ，当且仅当它含有𝑃和¬𝑃形式的两个因子。
+定理1.3-2一个基本和是永真式 ，当且仅当它含有𝑃、¬𝑃形式的两个因子。
+定义一个由基本积之和组成的公式，如果与给定的命题公式𝐴等价，则称它是𝐴的析取范式，记为𝐴 ⇔ 𝐴1 ∨ 𝐴2 ∨ ⋯ ∨ 𝐴𝑛, 𝑛 ≥ 1这里𝐴1, 𝐴2, ⋯ , 𝐴𝑛是基本积。
+
+ ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">博智</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/30/%E4%B8%AD%E6%9C%9F%E8%A7%86%E9%A2%91%E6%8B%8D%E6%91%84%E8%AE%B0%E5%BD%95/" title="无题">无题</a><time datetime="2024-01-30T09:27:19.186Z" title="发表于 2024-01-30 17:27:19">2024-01-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/30/%E6%B7%B1%E5%A4%9C%E6%8A%84%E7%AD%94%E6%A1%88%E6%9C%89%E6%84%9F/" title="无题">无题</a><time datetime="2024-01-30T09:27:19.186Z" title="发表于 2024-01-30 17:27:19">2024-01-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/30/hello-world/" title="Hello World">Hello World</a><time datetime="2024-01-30T09:27:19.182Z" title="发表于 2024-01-30 17:27:19">2024-01-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/29/ubuntu%E4%B8%8A%E8%A3%85hexo%E8%AE%B0/" title="ubuntu上装hexo记">ubuntu上装hexo记</a><time datetime="2024-01-29T02:37:53.000Z" title="发表于 2024-01-29 10:37:53">2024-01-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/18/%E5%A4%A7%E4%BA%8C%E4%B8%8A%E5%AD%A6%E6%9C%9F%E7%AE%80%E8%BF%B0/" title="大二上学期简述">大二上学期简述</a><time datetime="2024-01-18T13:54:34.000Z" title="发表于 2024-01-18 21:54:34">2024-01-18</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">7</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">21</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-01-30T09:41:29.420Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 博智</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
