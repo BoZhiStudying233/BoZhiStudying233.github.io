@@ -1,0 +1,7 @@
+_site/
+vendor/
+node_modules/
+.bundle/
+.jekyll-cache/
+al-folio-upgrade-report.md
+Gemfile.lock
